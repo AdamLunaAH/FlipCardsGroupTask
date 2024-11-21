@@ -121,14 +121,11 @@ namespace FlipCards
             Console.WriteLine("Choose your answer 1/2/3");
             string answer = Console.ReadLine();
 
-            string correctAnswer = currentCard.Answer;
 
             bool isCorrect = false;
-
-            // Kontrollera om svaret är korrekt
-            if ((answer == "1" && correctAnswer == currentCard.Option1) ||
-               (answer == "2" && correctAnswer == currentCard.Option2) ||
-               (answer == "3" && correctAnswer == currentCard.Option3))
+            if ((answer == "1" && currentCard.Answer == currentCard.Option1) ||
+                (answer == "2" && currentCard.Answer == currentCard.Option2) ||
+                (answer == "3" && currentCard.Answer == currentCard.Option3))
             {
                 isCorrect = true;
                 score++;
@@ -137,11 +134,13 @@ namespace FlipCards
             if (isCorrect)
             {
                 Console.WriteLine("Right answer");
+                Console.ReadKey();
             }
 
             else
             {
                 Console.WriteLine($"Wrong answer. Right answer was {currentCard.Answer}");
+                Console.ReadKey();
             }
 
             Console.WriteLine($"Current score: {score}");

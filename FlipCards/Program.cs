@@ -88,7 +88,7 @@ namespace FlipCards
                         break;
 
                     case ConsoleKey.P:
-                        
+                        flashcardGame.PlayRound(cards);
                         break;
 
                     case ConsoleKey.S:
