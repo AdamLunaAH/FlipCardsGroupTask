@@ -94,9 +94,12 @@ namespace FlipCards
 
         public void ShuffleCards(List<IFlashcard> cards)
         {
+            Console.Clear();
             Random shuffle = new Random(); // skapar en random "shuffle"
             cards = cards.OrderBy(x => shuffle.Next()).ToList(); //LINQ som ändrar ordningen på korten enligt random "shuffle"
-            Console.WriteLine("All cards have been shuffled!");
+            Console.WriteLine("All cards have been shuffled!\nPress ENTER to continue.");
+            Console.ReadKey();
+
         }
 
         public void PlayRound(List<IFlashcard> cards)
