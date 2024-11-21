@@ -71,12 +71,56 @@ namespace FlipCards
 
         public void PlayRound()
         {
+            if (flashcards.Count == 0)
+            {
+                Console.WriteLine("No flashcards to play. Add some cards first!");
+                return;
+            }
+
+            // Slumpa ett kort från listan
+            Random random = new Random();
+            Flashcard currentCard = flashcards[random.Next(flashcards.Count)];
+
+            // Visa frågan och alternativen
+            Console.WriteLine($"Question: {currentCard.Question}");
+            Console.WriteLine($"1. {currentCard.Option1}");
+            Console.WriteLine($"2. {currentCard.Option2}");
+            Console.WriteLine($"3. {currentCard.Option3}");
+
+
+            Console.WriteLine("Choose your answer 1/2/3");
+            string answer = Console.ReadLine();
+
+            string correctAnswer = currentCard.Answer;
+                                                                                                                                                               
+            bool isCorrect = false;
+                                                                                                                                                                                    
+            // Kontrollera om svaret är korrekt
+            if ((answer == "1" && correctAnswer == currentCard.Option1) ||
+               (answer == "2" && correctAnswer == currentCard.Option2) ||
+               (answer == "3" && correctAnswer == currentCard.Option3))
+            {
+                isCorrect = true;
+                score++;
+            }
+
+            if (isCorrect)
+            {
+                Console.WriteLine("Right answer");
+            }
+
+            else
+            {
+                Console.WriteLine($"Wrong answer. Right answer was {currentCard.Answer}");
+            }
+
+            Console.WriteLine($"Current score: {score}");
 
         }
 
         public string GetScore()
         {
-            return $"";
+            return $"Current score: {score}";
         }
     }
 }
