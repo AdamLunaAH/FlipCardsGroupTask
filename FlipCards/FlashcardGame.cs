@@ -74,6 +74,8 @@ namespace FlipCards
                 flashcards[i] = flashcards[j]; // Byter plats index i med index j
                 flashcards[j] = tillfällig; // sparar kortet på index j
             }
+
+            Console.WriteLine("All cards has been shuffled!");
         }
 
         public void PlayRound()
