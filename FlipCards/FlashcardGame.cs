@@ -80,12 +80,14 @@ namespace FlipCards
             {
                 // Delete card
                 cards.Remove(cardToRemove);
-                Console.WriteLine($"Card with title '{titleToDelete}' has been deleted.");
+                Console.WriteLine($"Card with title '{titleToDelete}' has been deleted.\nPress a button to continue.");
+                Console.ReadKey();
             }
             else
             {
                 // If the card is not found
-                Console.WriteLine($"No card found with the title '{titleToDelete}'.");
+                Console.WriteLine($"No card found with the title '{titleToDelete}'.\nPress a button to continue.");
+                Console.ReadKey();
             }
 
 
