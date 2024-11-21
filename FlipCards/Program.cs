@@ -68,7 +68,7 @@ namespace FlipCards
                 Console.WriteLine("To navigate the menu, use the up and down arrowkeys.");
             
 
-                string[] MenuOptions = { "A: Add new flashcard", "P: Play game", "S: Show all cards", "D: Delete card",
+                string[] MenuOptions = { "A: Add new flashcard", "P: Play game", "S: Shuffle all cards", "D: Delete card",
                 "H: Show high score","Q: Quit game","Space: Confirm answer","E: Return to main menu"};
 
                 Console.WriteLine("Choose by typing the letter of what you want to do:");
@@ -84,7 +84,7 @@ namespace FlipCards
                 switch (keyInfo.Key)
                 {
                     case ConsoleKey.A:
-                        
+                        flashcardGame.AddCard(cards);
                         break;
 
                     case ConsoleKey.P:
@@ -92,11 +92,11 @@ namespace FlipCards
                         break;
 
                     case ConsoleKey.S:
-                        
+                        flashcardGame.ShuffleCards(cards);
                         break;
 
                     case ConsoleKey.D:
-                        
+                        flashcardGame.RemoveCard(cards);
                         break;
 
                     case ConsoleKey.H:
