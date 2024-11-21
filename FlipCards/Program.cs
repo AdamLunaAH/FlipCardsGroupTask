@@ -32,15 +32,10 @@ namespace FlipCards
             Console.WriteLine("Press any key to start...");
             Console.ReadKey();
 
-            string[] MenuOptions = { "A: Add new flashcard", "P: Play game", "S: Show all cards", "D: Delete card",
-            "H: Show high score","Q: Quit game","Space: Confirm answer","E: Return to main menu"};
-
-            int MenuSelection = 0;
             // TODO: Create a game instance
             while (true)
             {
-                Console.Clear();
-                Console.WriteLine("To navigate the menu, use the up and down arrowkeys.");
+                
             List<IFlaschcard> cards = new List<IFlaschcard>
             {
                 // sample data
@@ -62,75 +57,47 @@ namespace FlipCards
                 Console.WriteLine();
             }
 
+                string[] MenuOptions = { "A: Add new flashcard", "P: Play game", "S: Show all cards", "D: Delete card",
+                "H: Show high score","Q: Quit game","Space: Confirm answer","E: Return to main menu"};
 
+                Console.WriteLine("Choose by typing the letter of what you want to do:");
+                Console.WriteLine();
 
-
-
-
-                for (int i = 0; i < MenuOptions.Length; i++)
+                for(int i = 0; i < MenuOptions.Length; i++)
                 {
-                    if(i == MenuSelection)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine("> " + MenuOptions[i]);
-                        Console.ResetColor();
-                    }
-                    else
-                    {
-                        Console.WriteLine("" + MenuOptions[i]);
-                    }
-                }
-
-                ConsoleKey key = Console.ReadKey(true).Key;
-                
-                if (key == ConsoleKey.UpArrow)
-                {
-                    MenuSelection = (MenuSelection - 1);
-                }
-                else if (key == ConsoleKey.DownArrow)
-                {
-                    MenuSelection = (MenuSelection + 1);
-                }
-                else if (key == ConsoleKey.Spacebar)
-                {
-                    Console.WriteLine($"Du valde {MenuOptions[MenuSelection]}.");
+                    Console.WriteLine($"{MenuOptions[i]}");
                     Console.WriteLine();
                 }
-                switch (MenuSelection)
+
+                ConsoleKeyInfo keyInfo = Console.ReadKey();
+                switch (keyInfo.Key)
                 {
-                    case 'A':
-                        Console.Clear();
-                        Console.WriteLine($"You chose {MenuOptions}");
+                    case ConsoleKey.A:
+                        
                         break;
 
-                    case 'P':
-                        Console.Clear();
-                        Console.WriteLine($"You chose {MenuOptions}");
+                    case ConsoleKey.P:
+                        
                         break;
 
-                    case 'S':
-                        Console.Clear();
-                        Console.WriteLine($"You chose {MenuOptions}");
+                    case ConsoleKey.S:
+                        
                         break;
 
-                    case 'D':
-                        Console.Clear();
-                        Console.WriteLine($"You chose {MenuOptions}");
+                    case ConsoleKey.D:
+                        
                         break;
 
-                    case 'H':
-                        Console.Clear();
-                        Console.WriteLine($"You chose {MenuOptions}");
+                    case ConsoleKey.H:
+                       
                         break;
 
-                    case 'Q':
-                        Console.Clear();
-                        Console.WriteLine("Exiting program...");
+                    case ConsoleKey.Q:
+                        
                         break;
 
-                    case 'E':
-                        Console.Clear();
-                        Console.WriteLine($"You chose {MenuOptions}");
+                    case ConsoleKey.E:
+                        
                         return;
                 }
                 
