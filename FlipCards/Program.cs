@@ -19,13 +19,13 @@ namespace FlipCards
             List<IFlashcard> cards = new List<IFlashcard>
             {
                 // sample data
-                new Flashcard(1, "Math", "What is 2 + 2?", "3", "4", "5", "4"),
-                new Flashcard(2, "Science", "What planet is known as the Red Planet?", "Earth", "Mars", "Jupiter", "Mars"),
-                new Flashcard(3, "Geography", "What is the capital of France?", "Paris", "Berlin", "Rome", "Paris"),
-                new Flashcard(4, "History", "Who was the first President of the United States?", "Abraham Lincoln", "George Washington", "Thomas Jefferson", "George Washington")
+                new Flashcard("Math", "What is 2 + 2?", "3", "4", "5", "4"),
+                new Flashcard("Science", "What planet is known as the Red Planet?", "Earth", "Mars", "Jupiter", "Mars"),
+                new Flashcard("Geography", "What is the capital of France?", "Paris", "Berlin", "Rome", "Paris"),
+                new Flashcard("History", "Who was the first President of the United States?", "Abraham Lincoln", "George Washington", "Thomas Jefferson", "George Washington")
             };
 
-            
+
 
             // test list
             Console.WriteLine("Sample Flashcards:");
@@ -39,7 +39,12 @@ namespace FlipCards
                 Console.WriteLine();
             }
 
+
+            flashcardGame.AddCard(cards);
             flashcardGame.RemoveCard(cards);
+            flashcardGame.ShuffleCards(cards);
+
+
 
 
 

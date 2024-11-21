@@ -12,7 +12,7 @@ namespace FlipCards
         private int score = 0;
 
 
-        public void AddCard()
+        public void AddCard(List<IFlashcard> cards)
         {
             Console.WriteLine("Enter title: ");
             string title = Console.ReadLine();
@@ -53,7 +53,7 @@ namespace FlipCards
             }
 
 
-            flashcards.Add(new Flashcard(title, question, option1, option2, option3, correctAnswer));
+            cards.Add(new Flashcard(title, question, option1, option2, option3, correctAnswer));
             Console.WriteLine($"Flashcard {title} was added!");
         }
 
@@ -83,17 +83,17 @@ namespace FlipCards
 
         }
 
-        public void ShuffleCards()
+        public void ShuffleCards(List<IFlashcard> cards)
         {
             Random shuffle = new Random();
-            int cards = flashcards.Count; // Sparar antal kort i variabeln cards
+            int cardsCount = cards.Count; // Sparar antal kort i variabeln cards
 
-            for (int i = 0; i < cards; i++) // Loopar igenom alla kort
+            for (int i = 0; i < cardsCount; i++) // Loopar igenom alla kort
             {
-                int j = shuffle.Next(i, cards); // .Next() slumpar ett tal mellan i och cards
-                var tillfällig = flashcards[i]; // Sparar kortet
-                flashcards[i] = flashcards[j]; // Byter plats index i med index j
-                flashcards[j] = tillfällig; // sparar kortet på index j
+                int j = shuffle.Next(i, cardsCount); // .Next() slumpar ett tal mellan i och cards
+                var tillfällig = cards[i]; // Sparar kortet
+                cards[i] = cards[j]; // Byter plats index i med index j
+                cards[j] = tillfällig; // sparar kortet på index j
             }
 
             Console.WriteLine("All cards has been shuffled!");
