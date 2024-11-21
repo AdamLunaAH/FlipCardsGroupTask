@@ -60,7 +60,16 @@ namespace FlipCards
         public void RemoveCard(List<IFlashcard> cards)
         {
             Console.WriteLine("Delete card\nList of current cards");
-            Console.WriteLine("Enter the title of the card you want to delete:");
+            Console.WriteLine("Enter the title of the card you want to delete:"); 
+            Console.WriteLine("List of flashcards:");
+            foreach (var card in cards)
+            {
+                Console.WriteLine($"Title: {card.Title}");
+                Console.WriteLine($"Question: {card.Question}");
+                Console.WriteLine($"1: {card.Option1}, 2: {card.Option2}, 3: {card.Option3}");
+                Console.WriteLine($"Answer: {card.Answer}");
+                Console.WriteLine();
+            }
             string titleToDelete = Console.ReadLine().Trim();
 
             // Find the card
