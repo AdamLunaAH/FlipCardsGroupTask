@@ -8,7 +8,6 @@ namespace FlipCards
 {
     public interface IFlaschcard
     {
-        int CardId { get; set; }
         string Title { get; set; }
         string Question { get; set; }
         string Option1 { get; set; }
