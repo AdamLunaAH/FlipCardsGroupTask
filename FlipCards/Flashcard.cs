@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace FlipCards
 {
-    internal class Flashcard : IFlaschcard
+    internal class Flashcard : IFlashcard
     {
 
 
-        public int CardId { get; set; }
         public string Title { get; set; }
         public string Question { get; set; }
         public string Option1 { get; set; }
@@ -19,9 +18,8 @@ namespace FlipCards
         public string Answer { get; set; }
 
 
-        public Flashcard(int cardId, string title, string question, string option1, string option2, string option3, string answer)
+        public Flashcard(string title, string question, string option1, string option2, string option3, string answer)
         {
-            CardId = cardId;
             Title = title;
             Question = question;
             Option1 = option1;
