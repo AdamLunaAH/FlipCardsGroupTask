@@ -145,7 +145,8 @@ namespace FlipCards
                 Console.ReadKey();
             }
 
-            Console.WriteLine($"Current score: {score}");
+            Console.WriteLine($"Current score: {score}\nPress a button to continue.");
+            Console.ReadKey();
 
         }
 

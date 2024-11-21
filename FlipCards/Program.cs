@@ -21,12 +21,12 @@ namespace FlipCards
  * Esc: Return to main menu
  */
 
- // TODO: Implement menu system using ConsoleKeyInfo
- // Hint: Use Console.ReadKey() to capture keyboard input
- // Consider using switch statement for different keys
- // Example: 'A' - Add card, 'P' - Play game, 'Q' - Quit
- // TODO: Handle menu choices
- // Remember to use Console.Clear() for better UI
+            // TODO: Implement menu system using ConsoleKeyInfo
+            // Hint: Use Console.ReadKey() to capture keyboard input
+            // Consider using switch statement for different keys
+            // Example: 'A' - Add card, 'P' - Play game, 'Q' - Quit
+            // TODO: Handle menu choices
+            // Remember to use Console.Clear() for better UI
 
             Console.WriteLine("Welcome to C# Flashcards!");
             Console.WriteLine("Press any key to start...");
@@ -60,13 +60,13 @@ namespace FlipCards
             //}
 
 
-            
-            
+
+
             while (true)
             {
                 Console.Clear();
                 Console.WriteLine("To navigate the menu, use the up and down arrowkeys.");
-            
+
 
                 string[] MenuOptions = { "A: Add new flashcard", "P: Play game", "S: Shuffle all cards", "D: Delete card",
                 "H: Show high score","Q: Quit game","Space: Confirm answer","E: Return to main menu"};
@@ -74,7 +74,7 @@ namespace FlipCards
                 Console.WriteLine("Choose by typing the letter of what you want to do:");
                 Console.WriteLine();
 
-                for(int i = 0; i < MenuOptions.Length; i++)
+                for (int i = 0; i < MenuOptions.Length; i++)
                 {
                     Console.WriteLine($"{MenuOptions[i]}");
                     Console.WriteLine();
@@ -100,18 +100,18 @@ namespace FlipCards
                         break;
 
                     case ConsoleKey.H:
-                       
+
                         break;
 
                     case ConsoleKey.Q:
-                        
+
                         break;
 
                     case ConsoleKey.E:
-                        
+
                         return;
                 }
-                
+
             }
         }
     }
