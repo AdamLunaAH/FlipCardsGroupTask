@@ -53,20 +53,19 @@ namespace FlipCards
 
 
             // test list
-            Console.WriteLine("Sample Flashcards:");
-            foreach (var card in cards)
-            {
-                Console.WriteLine($"Title: {card.Title}");
-                Console.WriteLine($"Question: {card.Question}");
-                Console.WriteLine($"1: {card.Option1}, 2: {card.Option2}, 3: {card.Option3}");
-                Console.WriteLine($"Answer: {card.Answer}");
-                Console.WriteLine();
-            }
+            //Console.WriteLine("Sample Flashcards:");
+            //foreach (var card in cards)
+            //{
+            //    Console.WriteLine($"Title: {card.Title}");
+            //    Console.WriteLine($"Question: {card.Question}");
+            //    Console.WriteLine($"1: {card.Option1}, 2: {card.Option2}, 3: {card.Option3}");
+            //    Console.WriteLine($"Answer: {card.Answer}");
+            //    Console.WriteLine();
+            //}
 
 
-            flashcardGame.AddCard(cards);
-            flashcardGame.RemoveCard(cards);
-            flashcardGame.ShuffleCards(cards);
+            
+            
             while (true)
             {
                 Console.Clear();
@@ -112,6 +111,7 @@ namespace FlipCards
                     case 'A':
                         Console.Clear();
                         Console.WriteLine($"You chose {MenuOptions}");
+                        flashcardGame.AddCard(cards);
                         break;
 
                     case 'P':
@@ -122,11 +122,13 @@ namespace FlipCards
                     case 'S':
                         Console.Clear();
                         Console.WriteLine($"You chose {MenuOptions}");
+                        flashcardGame.ShuffleCards(cards);
                         break;
 
                     case 'D':
                         Console.Clear();
                         Console.WriteLine($"You chose {MenuOptions}");
+                        flashcardGame.RemoveCard(cards);
                         break;
 
                     case 'H':
