@@ -12,7 +12,11 @@ namespace FlipCards
             Console.ReadKey();
 
             // TODO: Create a game instance
-            List<IFlaschcard> cards = new List<IFlaschcard>
+
+
+            FlashcardGame flashcardGame = new FlashcardGame();
+
+            List<IFlashcard> cards = new List<IFlashcard>
             {
                 // sample data
                 new Flashcard(1, "Math", "What is 2 + 2?", "3", "4", "5", "4"),
@@ -20,6 +24,8 @@ namespace FlipCards
                 new Flashcard(3, "Geography", "What is the capital of France?", "Paris", "Berlin", "Rome", "Paris"),
                 new Flashcard(4, "History", "Who was the first President of the United States?", "Abraham Lincoln", "George Washington", "Thomas Jefferson", "George Washington")
             };
+
+            
 
             // test list
             Console.WriteLine("Sample Flashcards:");
@@ -33,7 +39,7 @@ namespace FlipCards
                 Console.WriteLine();
             }
 
-
+            flashcardGame.RemoveCard(cards);
 
 
 

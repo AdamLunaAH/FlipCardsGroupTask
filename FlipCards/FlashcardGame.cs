@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace FlipCards
 {
-    internal class FlashcardGame
+    public class FlashcardGame
     {
-        private List<Flashcard> flashcards = new List<Flashcard>();
+        //private List<Flashcard> flashcards = new List<Flashcard>();
         private int score = 0;
 
 
@@ -17,8 +17,26 @@ namespace FlipCards
 
         }
 
-        public void RemoveCard(int cardId)
+        public void RemoveCard(List<IFlashcard> cards)
         {
+            Console.WriteLine("Delete card\nList of current cards");
+            Console.WriteLine("Enter the title of the card you want to delete:");
+            string titleToDelete = Console.ReadLine().Trim();
+
+            // 
+            IFlashcard cardToRemove = cards.FirstOrDefault(card => card.Title.Equals(titleToDelete, StringComparison.OrdinalIgnoreCase));
+
+            if (cardToRemove != null)
+            {
+                cards.Remove(cardToRemove);
+                Console.WriteLine($"Card with title '{titleToDelete}' has been deleted.");
+            }
+            else
+            {
+                Console.WriteLine($"No card found with the title '{titleToDelete}'.");
+            }
+
+
 
         }
 
