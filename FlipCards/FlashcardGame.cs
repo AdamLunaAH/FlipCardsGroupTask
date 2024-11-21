@@ -8,12 +8,16 @@ namespace FlipCards
 {
     internal class FlashcardGame
     {
-        public void AddCard(string question, string answer)
+        private List<Flashcard> flashcards = new List<Flashcard>();
+        private int score = 0;
+
+
+        public void AddCard(int cardId, string title, string question, string option1, string option2, string option3, string answer)
         {
 
         }
 
-        public void RemoveCard(int index)
+        public void RemoveCard(int cardId)
         {
 
         }
