@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FlipCards
 {
-    public class FlashcardGame
+    internal class FlashcardGame
     {
         //private List<Flashcard> flashcards = new List<Flashcard>();
         private int score = 0;

@@ -31,7 +31,6 @@ namespace FlipCards
             Console.WriteLine("Sample Flashcards:");
             foreach (var card in cards)
             {
-                Console.WriteLine($"Card ID: {card.CardId}");
                 Console.WriteLine($"Title: {card.Title}");
                 Console.WriteLine($"Question: {card.Question}");
                 Console.WriteLine($"1: {card.Option1}, 2: {card.Option2}, 3: {card.Option3}");
