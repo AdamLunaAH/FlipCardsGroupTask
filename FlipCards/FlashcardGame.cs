@@ -23,16 +23,19 @@ namespace FlipCards
             Console.WriteLine("Enter the title of the card you want to delete:");
             string titleToDelete = Console.ReadLine().Trim();
 
-            // 
+            // Find the card
             IFlashcard cardToRemove = cards.FirstOrDefault(card => card.Title.Equals(titleToDelete, StringComparison.OrdinalIgnoreCase));
 
+            
             if (cardToRemove != null)
             {
+                // Delete card
                 cards.Remove(cardToRemove);
                 Console.WriteLine($"Card with title '{titleToDelete}' has been deleted.");
             }
             else
             {
+                // If the card is not found
                 Console.WriteLine($"No card found with the title '{titleToDelete}'.");
             }
 
