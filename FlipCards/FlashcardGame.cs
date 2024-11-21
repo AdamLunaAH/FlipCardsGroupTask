@@ -82,18 +82,9 @@ namespace FlipCards
 
         public void ShuffleCards()
         {
-            Random shuffle = new Random();
-            int cards = flashcards.Count; // Sparar antal kort i variabeln cards
-
-            for (int i = 0; i < cards; i++) // Loopar igenom alla kort
-            {
-                int j = shuffle.Next(i, cards); // .Next() slumpar ett tal mellan i och cards
-                var tillfällig = flashcards[i]; // Sparar kortet
-                flashcards[i] = flashcards[j]; // Byter plats index i med index j
-                flashcards[j] = tillfällig; // sparar kortet på index j
-            }
-
-            Console.WriteLine("All cards has been shuffled!");
+            Random shuffle = new Random(); // skapar en random "shuffle"
+            flashcards = flashcards.OrderBy(x => shuffle.Next()).ToList(); //LINQ som ändrar ordningen på korten enligt random "shuffle"
+            Console.WriteLine("All cards have been shuffled!");
         }
 
         public void PlayRound()
