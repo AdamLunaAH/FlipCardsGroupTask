@@ -90,9 +90,9 @@ namespace FlipCards
             Console.WriteLine("All cards have been shuffled!");
         }
 
-        public void PlayRound()
+        public void PlayRound(List<IFlashcard> cards)
         {
-            if (flashcards.Count == 0)
+            if (cards.Count == 0)
             {
                 Console.WriteLine("No flashcards to play. Add some cards first!");
                 return;
@@ -100,7 +100,7 @@ namespace FlipCards
 
             // Slumpa ett kort från listan
             Random random = new Random();
-            Flashcard currentCard = flashcards[random.Next(flashcards.Count)];
+            Flashcard currentCard = (Flashcard)cards[random.Next(cards.Count)];
 
             // Visa frågan och alternativen
             Console.WriteLine($"Question: {currentCard.Question}");
