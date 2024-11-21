@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FlipCards
 {
-    internal class Flashcard : IFlaschcard
+    internal class Flashcard : IFlashcard
     {
 
 

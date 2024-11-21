@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FlipCards
 {
-    public interface IFlaschcard
+    public interface IFlashcard
     {
         string Title { get; set; }
         string Question { get; set; }

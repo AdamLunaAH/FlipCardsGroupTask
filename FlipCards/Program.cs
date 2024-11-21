@@ -12,26 +12,36 @@ namespace FlipCards
             Console.ReadKey();
 
             // TODO: Create a game instance
-            List<IFlaschcard> cards = new List<IFlaschcard>
+
+
+            FlashcardGame flashcardGame = new FlashcardGame();
+
+            List<IFlashcard> cards = new List<IFlashcard>
             {
                 // sample data
-                new Flashcard(1, "Math", "What is 2 + 2?", "3", "4", "5", "4"),
-                new Flashcard(2, "Science", "What planet is known as the Red Planet?", "Earth", "Mars", "Jupiter", "Mars"),
-                new Flashcard(3, "Geography", "What is the capital of France?", "Paris", "Berlin", "Rome", "Paris"),
-                new Flashcard(4, "History", "Who was the first President of the United States?", "Abraham Lincoln", "George Washington", "Thomas Jefferson", "George Washington")
+                new Flashcard("Math", "What is 2 + 2?", "3", "4", "5", "4"),
+                new Flashcard("Science", "What planet is known as the Red Planet?", "Earth", "Mars", "Jupiter", "Mars"),
+                new Flashcard("Geography", "What is the capital of France?", "Paris", "Berlin", "Rome", "Paris"),
+                new Flashcard("History", "Who was the first President of the United States?", "Abraham Lincoln", "George Washington", "Thomas Jefferson", "George Washington")
             };
+
+
 
             // test list
             Console.WriteLine("Sample Flashcards:");
             foreach (var card in cards)
             {
-                Console.WriteLine($"Card ID: {card.CardId}");
                 Console.WriteLine($"Title: {card.Title}");
                 Console.WriteLine($"Question: {card.Question}");
                 Console.WriteLine($"1: {card.Option1}, 2: {card.Option2}, 3: {card.Option3}");
                 Console.WriteLine($"Answer: {card.Answer}");
                 Console.WriteLine();
             }
+
+
+            flashcardGame.AddCard(cards);
+            flashcardGame.RemoveCard(cards);
+            flashcardGame.ShuffleCards(cards);
 
 
 
